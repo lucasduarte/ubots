@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimentos</title>
+    <link href="/stylesheets/bulma.css" rel="stylesheet">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="colum" style="height:150px"><h1 class="title">Atendimentos</h1></div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <table class="table is-bordered is-fullwidth is-striped">
+              <thead>
+                <tr>
+                  <th colspan="2">Cartões</th>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <th>Cliente</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<atendimentos.cartoes.atendimento.emAtendimento.length; i++) { %>
+                  <tr>
+                    <td><span class="tag is-warning">Em Atendimento</span> </td>
+                    <td>
+                      <%= atendimentos.cartoes.atendimento.emAtendimento[i] %>
+                    </td>
+                  </tr>
+                <% } %>
+                <% for(var i=0; i<atendimentos.cartoes.atendimento.filaAtendimento.length; i++) { %>
+                  <tr>
+                    <td><span class="tag is-danger">Na fila</span></td> 
+                    <td>
+                      <%= atendimentos.cartoes.atendimento.filaAtendimento[i] %>
+                    </td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+            <div class="buttons">
+              <button class="button is-info" id="btn-novo-cartoes">Novo</button>
+              <button class="button is-warning" id="btn-finaliza-cartoes">Finaliza</button>
+            </div>
+          </div>
+          <div class="column">
+            <table class="table is-bordered is-fullwidth is-striped">
+              <thead>
+                <tr>
+                  <th colspan="2">Empréstimos</th>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <th>Cliente</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<atendimentos.emprestimos.atendimento.emAtendimento.length; i++) { %>
+                  <tr>
+                    <td><span class="tag is-warning">Em Atendimento</span> </td>
+                    <td>
+                      <%= atendimentos.emprestimos.atendimento.emAtendimento[i] %>
+                    </td>
+                  </tr>
+                <% } %>
+                <% for(var i=0; i<atendimentos.emprestimos.atendimento.filaAtendimento.length; i++) { %>
+                  <tr>
+                    <td><span class="tag is-danger">Na fila</span></td> 
+                    <td>
+                      <%= atendimentos.emprestimos.atendimento.filaAtendimento[i] %>
+                    </td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+            <div class="buttons">
+              <button class="button is-info" id="btn-novo-emprestimos">Novo</button>
+              <button class="button is-warning" id="btn-finaliza-emprestimos">Finaliza</button>
+            </div>
+          </div>
+          <div class="column">
+            <table class="table is-bordered is-fullwidth is-striped">
+              <thead>
+                <tr>
+                  <th colspan="2">Outros Assuntos</th>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <th>Cliente</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<atendimentos.outros.atendimento.emAtendimento.length; i++) { %>
+                  <tr>
+                    <td><span class="tag is-warning">Em Atendimento</span> </td>
+                    <td>
+                      <%= atendimentos.outros.atendimento.emAtendimento[i] %>
+                    </td>
+                  </tr>
+                <% } %>
+                <% for(var i=0; i<atendimentos.outros.atendimento.filaAtendimento.length; i++) { %>
+                  <tr>
+                    <td><span class="tag is-danger">Na fila</span></td> 
+                    <td>
+                      <%= atendimentos.outros.atendimento.filaAtendimento[i] %>
+                    </td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+            <div class="buttons">
+              <button class="button is-info" id="btn-novo-outros">Novo</button>
+              <button class="button is-warning" id="btn-finaliza-outros">Finaliza</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </body>
+
+</html>
+
+<script src="/javascript/home.js"></script>
